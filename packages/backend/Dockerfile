@@ -12,6 +12,8 @@ RUN echo && echo versions && \
   echo yarn: $(yarn -v) && \
   echo
 
+EXPOSE 8080
+
 RUN npm install
 RUN npm run build
 
