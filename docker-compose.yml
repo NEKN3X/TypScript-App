@@ -22,7 +22,7 @@ services:
     <<: *base
     tty: true
     ports:
-      - 3000:3000
+      - 3000:8080
     volumes:
       - ./packages/backend:/app
     command: npm run start:dev
