@@ -12,6 +12,7 @@ RUN echo && echo versions && \
   echo yarn: $(yarn -v) && \
   echo
 
+RUN npm install
 RUN npm run build
 
 CMD [ "npm", "run", "start:prod" ]
