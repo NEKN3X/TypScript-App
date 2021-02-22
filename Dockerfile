@@ -1,0 +1,13 @@
+FROM node:15
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install -g npm@7.5.4
+
+RUN echo && echo versions && \
+  echo node: $(node -v) && \
+  echo npm: $(npm -v) && \
+  echo yarn: $(yarn -v) && \
+  echo
