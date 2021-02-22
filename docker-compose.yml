@@ -1,7 +1,6 @@
 version: "3"
 
 x-var: &base
-  build: .
   env_file:
     - .env
 
@@ -21,6 +20,9 @@ services:
   backend:
     <<: *base
     tty: true
+    build:
+      context: ./packages/backend
+      dockerfile: Dockerfile
     ports:
       - 3000:8080
     volumes:
@@ -32,6 +34,9 @@ services:
   frontend:
     <<: *base
     tty: true
+    build:
+      context: ./packages/frontend
+      dockerfile: Dockerfile
     ports:
       - 8000:3000
     volumes:
