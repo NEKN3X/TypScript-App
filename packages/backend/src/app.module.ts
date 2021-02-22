@@ -16,10 +16,7 @@ import { UserModule } from './user/user.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
+      url: process.env.DB_URL,
       entities: [join(__dirname, './**/*.model{.ts,.js}')],
       synchronize: true,
       useNewUrlParser: true,
